@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template id="template" xml:space="preserve">
+
+    <t t-name="RiderSelectionButton">
+        <div id="selectionbutton" class='control-button in_note'>
+            <i class="fa fa-user-plus">Add Rider</i>
+        </div>
+    </t>
+
+    <t t-name="RiderPopupWidget">
+        <div class="modal-dialog">
+            <div class="popup popup-note">
+                <p class="title"><t t-esc=" widget.options.title || 'Select Rider' " /></p>
+                 <select id="rider_boy" style="width:461px;" class="employee_select">
+                    <option id="" value="select"></option>
+                </select>
+                <div class="footer">
+                    <button class="button confirm">
+                        Select
+                    </button>
+                    <button class="button cancel">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </t>
+     <t t-extend="PosTicket">
+        <t t-jquery='.receipt-change' t-operation='after'>
+              <tr>
+                  <td class="pos-left-align">
+                      Rider:
+                  </td>
+                  <td class="pos-right-align">
+                      <t t-esc='order.order_rider'/>
+                  </td>
+             <!--     <td class="pos-left-align">
+                      Invoice No:
+                  </td>
+                  <td class="pos-right-align">
+                      <t t-esc='order.picking_id'/>
+                  </td> -->
+              </tr>
+        </t>
+    </t>
+</template>

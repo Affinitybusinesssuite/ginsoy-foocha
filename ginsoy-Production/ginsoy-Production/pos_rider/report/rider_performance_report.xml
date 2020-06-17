@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <report id="rider_performance_report"
+                string="Rider Performance Analysis"
+                model="Rider.performance.wizard"
+                report_type="qweb-pdf"
+                file="pos_Rider.performance_analysis"
+                name="pos_Rider.performance_analysis"/>
+    </data>
+</odoo>

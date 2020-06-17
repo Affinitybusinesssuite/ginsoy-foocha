@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="PreBillScreenWidget">
+        <div class='receipt-screen screen'>
+            <div class='screen-content'>
+                <div class='top-content'>
+                    <span class='button back'>
+                        <i class='fa fa-angle-double-left'></i>
+                        Back
+                    </span>
+                    <h1>Kitchen Order Printing</h1>
+                    <span class='button next'>
+                        Ok 
+                        <i class='fa fa-angle-double-right'></i>
+                    </span>
+                </div>
+                <div class="centered-content">
+                    <div class="button print">
+                        <i class='fa fa-print'></i> Print 
+                    </div>
+                    <div class="pos-prereceipt-container">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="PrePrintBillButton">
+        <span class="control-button order-printbill">
+            <i class="fa fa-cutlery"></i>
+            Kitchen Order
+        </span>
+    </t>
+
+    <t t-name="PrePosTicket">
+        <div class="pos-sale-ticket">
+            <div class="pos-center-align">
+		    <hr/>
+		    	<h2>KOT</h2>
+		    <hr/>
+		    <h3> <t t-esc="order.name"/> 
+		    <t t-esc="order.picking_id"/><t t-esc="order.session_id"/></h3> 
+		</div>
+            <br />
+           	Print Date : <t t-esc="moment(new Date()).format('DD/MM/YYYY HH:mm:ss')"/><br />
+		Order Date : <t t-esc="receipt.date.localestring"/><br />
+		
+            <!--Order Type: 
+           
+	        <t t-if="orderline.get_take_away()">
+	            <div class="pos-disc-font">
+	                Take Away
+	            </div>
+	        </t>
+	        <t t-if="orderline.get_drive_through_mode()">
+	            <div class="pos-disc-font">
+	                Drive Through
+	            </div>
+	        </t>
+	        <t t-if="orderline.get_dine_in_mode()">
+	            <div class="pos-disc-font">
+	                Dine In
+	            </div>
+	        </t>
+	        <t t-if="orderline.get_online_mode()">
+	            <div class="pos-disc-font">
+	                Online
+	            </div>
+	        </t>
+            <br />-->
+            User : <t t-esc="widget.pos.user.name"/><br />
+            <t t-if='receipt.floor'>
+                Floor : <t t-esc="receipt.floor"/><br />
+            </t>
+            <t t-if='receipt.table'>
+                Table : <t t-esc='receipt.table' /><br />
+            </t>
+            <t t-if='widget.pos.cashier'>
+                Waiter : <t t-esc='widget.pos.cashier.name'/><br />             
+            </t>
+            <br />
+		<t t-if="widget.pos.get_client() and widget.pos.get_client().name">
+                
+                <div>
+                    Customer: <t t-esc="widget.pos.get_client().name"/>
+                </div>
+             </t>
+             <t t-if="widget.pos.get_client() and widget.pos.get_client().address">
+                 <div>
+                     Address: <t t-esc="widget.pos.get_client().address"/>
+                 </div>
+             </t>
+		<t t-if="widget.pos.get_client() and widget.pos.get_client().mobile">
+                 <div>
+                     Mobile: <t t-esc="widget.pos.get_client().mobile"/>
+                 </div>
+             </t>
+		
+		<t t-if="widget.pos.get_client() and widget.pos.get_client().phone">
+                 <div>
+                     Phone: <t t-esc="widget.pos.get_client().phone"/>
+                 </div>
+             </t>
+            <br />
+            <t t-if="orderlines.length > 0">
+                <table class='receipt-orderlines'>
+                    <colgroup>
+                        <col width='70%'/>
+                        <col width='35%'/>
+                    </colgroup>
+                    <tr style="border-bottom:1px dashed black; border-top:1px dashed black;">
+                        <td>Product Name</td>
+                        <td class="pos-right-align">Quantity</td>
+                    </tr>
+
+                    <tr t-foreach="orderlines" t-as="orderline">
+                        <td>
+                            <t t-esc="orderline.get_product().display_name"/>
+                            <div class="pos-disc-font"> 
+                                <t t-esc="orderline.get_note()"/>
+                            </div>    
+                        </td>
+                        <td class="pos-right-align">
+                            <t t-esc="orderline.get_quantity_str_with_unit()"/>
+                        </td>
+                    </tr>
+                </table>
+            </t>
+            <t t-if="orderlines.length == 0"><div class="pos-center-align">No Pending Orders</div></t>
+        </div>
+    </t>
+
+</templates>

@@ -1,0 +1,4 @@
+[submodule "foocha/ginsoy"]
+	path = foocha/ginsoy
+	url = git@github.com:foocha/ginsoy.git
+	branch = Stage99
