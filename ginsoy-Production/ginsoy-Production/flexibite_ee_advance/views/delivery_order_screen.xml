@@ -75,6 +75,7 @@
                                             type="object" states="draft">Make Payment</button>
                                     <button name="check_order_delivery_type" class="btn btn-info pull-right"
                                             type="object" states="paid">Delivered</button>
+                                    <button name="check_order_delivery_type" class="btn btn-info pull-left">Receipt</button>
                                 </span>
                             </div>
                         </div>
