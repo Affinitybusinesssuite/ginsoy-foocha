@@ -100,7 +100,7 @@ var PreBillScreenWidget = screens.ReceiptScreenWidget.extend({
 			console.log("ok yhn tk: ");				
 	        	self.pos.push_order(order);
 			console.log("Picking ID ",order.picking_id);
-            	self.pos.gui.show_screen('receipt'); 
+            	//self.pos.gui.show_screen('receipt'); 
 			}
 	    console.log("Picking ID1",order.picking_id);
 	     console.log("END");
