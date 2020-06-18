@@ -98,7 +98,9 @@ var PreBillScreenWidget = screens.ReceiptScreenWidget.extend({
 	        	var receipt = QWeb.render('XmlReceipt',env);
 	        	order.set_pos_xml_receipt_html(receipt.replace(/<img[^>]*>/g,"").replace(/<object[^>]*>/g,"")); */				
 	        	self.pos.push_order(order);
-			return posmodel_super.add_new_order.apply(this);
+			self.pos.chrome.screens.orderlist.clear_cart();
+            		order.set_client(null);
+			//return posmodel_super.add_new_order.apply(this);
             		//self.pos.gui.show_screen('receipt'); 
 			}
 	    		console.log("END");
