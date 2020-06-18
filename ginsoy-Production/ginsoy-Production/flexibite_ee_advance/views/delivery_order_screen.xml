@@ -60,6 +60,14 @@
 
                                    </div>
                              </div>
+                             <div class="row">
+                                   <div class="col-md-4">
+                                        Rider
+                                   </div>
+                                   <div class="col-md-8">
+                                       <field name="employee_id"/>
+                                   </div>
+                             </div>
 
                             <div class="row">
                                 <span class="col-md-12">
