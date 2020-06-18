@@ -11,7 +11,7 @@
                     <t t-name="kanban-box">
                         <div class="oe_kanban_details">
                              <div class="row" style="">
-                                   <div class="col-md-6">
+                                   <div class="col-md-6 tenderid">
                                        <strong>
                                            <field name="pos_reference"/>
                                        </strong>
@@ -75,7 +75,7 @@
                                             type="object" states="draft">Make Payment</button>
                                     <button name="check_order_delivery_type" class="btn btn-info pull-right"
                                             type="object" states="paid">Delivered</button>
-                                    <button name="check_order_delivery_type" class="btn btn-info pull-left">Receipt</button>
+                                    <button id="tender_receipt" class="btn btn-info pull-left">Receipt</button>
                                 </span>
                             </div>
                         </div>
