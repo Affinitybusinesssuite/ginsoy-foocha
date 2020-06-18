@@ -47,8 +47,7 @@
                                         Date
                                    </div>
                                    <div class="col-md-8">
-                                       <field name="delivery_date"/>
-                                       <field name="delivery_time"/>
+                                       <field name="date_order"/>
                                    </div>
                              </div>
 
