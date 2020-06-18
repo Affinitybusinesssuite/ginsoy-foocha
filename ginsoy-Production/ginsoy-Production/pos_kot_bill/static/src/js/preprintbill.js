@@ -96,14 +96,11 @@ var PreBillScreenWidget = screens.ReceiptScreenWidget.extend({
 	           /* var receipt_html = QWeb.render('PosTicket',env);
 	        	order.set_pos_normal_receipt_html(receipt_html.replace(/<img[^>]*>/g,"").replace(/<object[^>]*>/g,"")); 
 	        	var receipt = QWeb.render('XmlReceipt',env);
-	        	order.set_pos_xml_receipt_html(receipt.replace(/<img[^>]*>/g,"").replace(/<object[^>]*>/g,"")); */
-			console.log("ok yhn tk: ");				
+	        	order.set_pos_xml_receipt_html(receipt.replace(/<img[^>]*>/g,"").replace(/<object[^>]*>/g,"")); */				
 	        	self.pos.push_order(order);
-			console.log("Picking ID ",order.picking_id);
-            	self.pos.gui.show_screen('products'); 
+            		self.pos.gui.show_screen('receipt'); 
 			}
-	    console.log("Picking ID1",order.picking_id);
-	     console.log("END");
+	    		console.log("END");
     },
     click_back: function(){
         this.gui.show_screen('products');
