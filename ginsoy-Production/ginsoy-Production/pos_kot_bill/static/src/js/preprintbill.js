@@ -119,7 +119,7 @@ var PreBillScreenWidget = screens.ReceiptScreenWidget.extend({
             //var result = self.pos.db.get_order_by_id(order_id);
 			console.log("ok yhn tk: ");
 	    
-        this._super();
+       // this._super();
         var order = this.pos.get_order();
 	    console.log("order: ",order);
         var orderLines = [];
