@@ -117,7 +117,7 @@ var PreBillScreenWidget = screens.ReceiptScreenWidget.extend({
         	//var order_id = self.pos
 		//console.log("order id: ",order_id);
             //var result = self.pos.db.get_order_by_id(order_id);
-		//console.log("result obj: ",result);
+			console.log("ok yhn tk: ");
 	    
         this._super();
         var order = this.pos.get_order();
@@ -130,6 +130,7 @@ var PreBillScreenWidget = screens.ReceiptScreenWidget.extend({
                 orderLines.push(order.orderlines.models[i]);
             }
         }
+	console.log("ok yhn tk 2: ");
         order.orderlines.models = orderLines;
         this.$('.pos-prereceipt-container').html(QWeb.render('PrePosTicket',{
             widget:this,
@@ -141,7 +142,8 @@ var PreBillScreenWidget = screens.ReceiptScreenWidget.extend({
         this.$('.receipt-paymentlines').remove();
         this.$('.receipt-change').remove();
         order.orderlines.models = GorderLines;
-
+	console.log("ok yhn tk 3: ");
+	
     },
 });
 
