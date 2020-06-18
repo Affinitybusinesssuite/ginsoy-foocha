@@ -4317,6 +4317,7 @@ odoo.define('flexibite_ee_advance.screens', function (require) {
 	        'click #pay_due_amt': 'pay_order_due',
 	        'click #edit_order':'edit_pos_order',
 	        'click #set_riders':'click_set_riders',
+	        'click #tender_receipt':'click_tender_receipt',
 	    },
 	    filter:"all",
         date: "all",
@@ -4325,6 +4326,9 @@ odoo.define('flexibite_ee_advance.screens', function (require) {
         },
         click_back: function(){
         	this.gui.show_screen('products');
+        },
+	click_tender_receipt: function(){
+        	console.log("tender run")
         },
 	click_set_riders: function(event){
 	var self = this;
