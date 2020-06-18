@@ -4328,7 +4328,7 @@ odoo.define('flexibite_ee_advance.screens', function (require) {
         	this.gui.show_screen('products');
         },
 	click_tender_receipt: function(){
-        	console.log("tender run")
+        	console.log("tender run");
         },
 	click_set_riders: function(event){
 	var self = this;
