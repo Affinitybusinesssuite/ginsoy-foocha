@@ -4734,7 +4734,7 @@ odoo.define('flexibite_ee_advance.screens', function (require) {
                     	}
                     }
                     selectedOrder.set_order_id(order_id);
-		    selectedOrder.set_picking_ID(result.picking_id);				
+		    selectedOrder.set_picking_id(result.picking_id);	
                     self.gui.show_screen('receipt');
 			var d = new Date();
 			var H = d.getHours();
