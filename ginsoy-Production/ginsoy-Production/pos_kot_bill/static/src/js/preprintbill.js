@@ -97,9 +97,10 @@ var PreBillScreenWidget = screens.ReceiptScreenWidget.extend({
 	        	order.set_pos_normal_receipt_html(receipt_html.replace(/<img[^>]*>/g,"").replace(/<object[^>]*>/g,""));
 	        	var receipt = QWeb.render('XmlReceipt',env);
 	        	order.set_pos_xml_receipt_html(receipt.replace(/<img[^>]*>/g,"").replace(/<object[^>]*>/g,"")); */
+			console.log("ok yhn tk: ");				
 	        	self.pos.push_order(order);
-			console.log("Picking ID0",order.picking_id);
-            	self.pos.gui.show_screen('receipt'); 
+			console.log("Picking ID ",order.picking_id);
+            	//self.pos.gui.show_screen('receipt'); 
 			}
 	    console.log("Picking ID1",order.picking_id);
 	     console.log("END");
@@ -117,7 +118,6 @@ var PreBillScreenWidget = screens.ReceiptScreenWidget.extend({
         	//var order_id = self.pos
 		//console.log("order id: ",order_id);
             //var result = self.pos.db.get_order_by_id(order_id);
-			console.log("ok yhn tk: ");
 	    
        // this._super();
         var order = this.pos.get_order();
