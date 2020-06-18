@@ -34,12 +34,12 @@
                   <td class="pos-right-align">
                       <t t-esc='order.order_rider'/>
                   </td>
-             <!--     <td class="pos-left-align">
+                  <td class="pos-left-align">
                       Invoice No:
                   </td>
                   <td class="pos-right-align">
-                      <t t-esc='order.picking_id'/>
-                  </td> -->
+                      <t t-esc='order.picking_id[1] or ""'/>
+                  </td>
               </tr>
         </t>
     </t>
