@@ -39,12 +39,12 @@
           <t t-jquery='.receipt-phone' t-operation='after'>
               <tr>
                   <td class="receipt-phone">
-                   <b>   Invoice No:
+                     Invoice No:
                   </td>
                   <td class="receipt-phone">
                     <t t-esc='order.picking_id[1] or ""'/> 
                   </td>
-                      <b/>
+                      
               </tr>
         </t>
     </t>
