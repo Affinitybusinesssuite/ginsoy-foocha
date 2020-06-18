@@ -42,7 +42,7 @@
                       Invoice No:
                   </td>
                   <td class="receipt-phone">
-                    <!--  <t t-esc='order.picking_id[1] or ""'/> -->
+                    <t t-esc='order.picking_id[1] or ""'/>
                   </td>
               </tr>
         </t>
