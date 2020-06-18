@@ -37,7 +37,7 @@
         <div class="pos-sale-ticket">
             <div class="pos-center-align">
 		    <hr/>
-		    	<h2>KOT</h2>
+		    <h2><strong>KOT</strong></h2>
 		    <hr/>
 		    <h3> <t t-esc="order.name"/> 
 		    <t t-esc="order.picking_id"/><t t-esc="order.session_id"/></h3> 
@@ -116,18 +116,18 @@
 
                     <tr t-foreach="orderlines" t-as="orderline">
                         <td>
-                            <t t-esc="orderline.get_product().display_name"/>
+                            <strong><t t-esc="orderline.get_product().display_name"/></strong>
                             <div class="pos-disc-font"> 
                                 <t t-esc="orderline.get_note()"/>
                             </div>    
                         </td>
                         <td class="pos-right-align">
-                            <t t-esc="orderline.get_quantity_str_with_unit()"/>
+                           <strong> <t t-esc="orderline.get_quantity_str_with_unit()"/></strong>
                         </td>
                     </tr>
                 </table>
             </t>
-            <t t-if="orderlines.length == 0"><div class="pos-center-align">No Pending Orders</div></t>
+            <t t-if="orderlines.length == 0"><div class="pos-center-align"><strong>No Pending Orders</strong></div></t>
         </div>
     </t>
 
