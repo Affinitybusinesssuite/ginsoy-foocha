@@ -34,6 +34,10 @@
                   <td class="pos-right-align">
                       <t t-esc='order.order_rider'/>
                   </td>
+              </tr>
+        </t>
+          <t t-jquery='.receipt-change' t-operation='after'>
+              <tr>
                   <td class="receipt-phone">
                       Invoice No:
                   </td>
