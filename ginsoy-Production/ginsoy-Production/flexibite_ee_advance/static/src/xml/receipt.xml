@@ -13,7 +13,7 @@
            	</div>
 		</t>
 	</t>
-
+<!--<>-->
     <t t-name="XmlMoneyInOutTicket">
         <receipt align='center' width='40' value-thousands-separator='' >   
             <line>
