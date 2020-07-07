@@ -52,14 +52,14 @@ odoo.define('rider_performance_analysis.employee_pos', function (require) {
             }
         },
         click_confirm: function () {
-            var employee_id = $("#rider_boy :selected").attr('id');
-            var employee_name = $("#rider_boy :selected").text();
-            var order = this.pos.get_order();
-            order.order_rider = employee_name;
-            order.employee_id = employee_id;
+            var remployee_id = $("#rider_boy :selected").attr('id');
+            var remployee_name = $("#rider_boy :selected").text();
+            var rorder = this.pos.get_order();
+            rorder.order_rider = remployee_name;
+            rorder.employee_id = remployee_id;
             this.gui.close_popup();
            // $("#selectionbutton").innerHTML = employee_name;
-            $(selectionbutton).text("Rider - " + employee_name)
+            $(selectionbutton).text("Rider - " + remployee_name)
             console.log($(selectionbutton).text());
         },
 
