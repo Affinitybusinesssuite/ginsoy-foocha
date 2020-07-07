@@ -32,6 +32,7 @@
                             <tr>
                                 <th class="text-center">Rider</th>
                                 <th class="text-center">Date</th>
+                                <th class="text-center">No. of Order</th>
                                 <th class="text-center">Amount</th>
                             </tr>
                         </thead>
@@ -42,6 +43,9 @@
                                 </td>
                                 <td class="text-center">
                                     <span t-esc="performance['order_date']"/>
+                                    </td>
+                                 <td class="text-center">
+                                    <span t-esc="performance['o_count']"/>
                                 </td>
                                 <td class="text-center">
                                     <span t-esc="performance['total_amount']"
