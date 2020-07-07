@@ -28,7 +28,7 @@ class AllInOneAccountReport(models.TransientModel):
 
     """In this class the values are fetched from the wizard
     and the required values from the database and passed to
-    the report template"""
+    the report template"""count(po.amount_total) as o_count, 
 
     _name = "report.pos_rider.performance_analysis"
 
@@ -36,7 +36,7 @@ class AllInOneAccountReport(models.TransientModel):
     def _get_report_values(self, docids, data=None):
         start_date = data['start_date']
         end_date = data['end_date']
-        query = """select sum(po.amount_total) as total_amount,po.date_order::date as order_date,
+        query = """select count(po.amount_total) as o_count, sum(po.amount_total) as total_amount,po.date_order::date as order_date,
                 he.name as rider_name
                 from pos_order po
                 join hr_employee he
